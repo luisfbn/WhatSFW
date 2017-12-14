@@ -1,0 +1,38 @@
+{
+    "manifest_version": 2,
+    
+    "name": "Whatsapp SFW",
+    "description": "Extensión de Chrome para hacer el Whatsapp Web más seguro para el trabajo.",
+    "version": "1.0",
+
+	"page_action": {
+		"default_icon":  { "16": "icon16.png",
+								  "24": "icon24.png",
+								  "32": "icon32.png",
+							      "48": "icon48.png"},
+		"default_title":"Whatsapp SFW",
+		"default_popup":"popup.html"
+	},
+
+    "options_page": "options.html",
+
+    "background": {
+        "scripts": ["eventPage.js"],
+        "persistent": false
+    },
+
+	"content_scripts":[
+		{
+			"matches": ["*://*.whatsapp.com/*"],
+			"js":["whatsweb_cs.js", "jquery-1.10.2.js", "jquery.dataTables.js", "jquery-3.1.1.js"],
+			"css":["whatsweb_cs.css"]
+		}
+	],
+	
+    "permissions" : [
+		"tabs",
+        "storage", 
+        "notifications",
+		"*://*.whatsapp.com/*"
+    ]
+}
