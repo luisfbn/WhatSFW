@@ -1,11 +1,11 @@
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     if (request.action == "aplicarEstilos") {
- 
-		
+ 		
 		if( $('#styleSFW').length ) {
 			document.getElementById("styleSFW").remove();
 		}
 		
+		//Mensaje de 
 		if( $('.m6ZEb').length ) {
 			$('.m6ZEb').remove();
 		}
@@ -15,6 +15,9 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 		css.type = "text/css";
 		
 		css.innerHTML = "";
+		
+		
+		//Opacar imágenes del chat
 		css.innerHTML += ".image-thumb {opacity: 0.05; transition: visibility 0s, opacity 0.5s linear;} ";
 		css.innerHTML += ".image-thumb:hover {opacity: 1;} ";
 		
@@ -32,15 +35,22 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 		css.innerHTML += ".ellipsify { color: white;} "; //.starred-title-main 
 		css.innerHTML += ".chat-status{ color: yellow;} "; // .chat-secondary, .header-secondary 
 		css.innerHTML += ".chat-body *{ color: gray!important;} ";
-		css.innerHTML += ".chatlist-panel-search *{ background-color: black!important; color: gray!important;} ";
+		css.innerHTML += ".chatlist-panel-search *{ background-color: rgba(0, 0, 0, 1); background-color: black!important; color: gray!important;} ";
 		
+		//media-content
+		//.media-content .media
+		
+		css.innerHTML += ".bubble, .text-quote { background-color: rgba(0, 0, 0, 1); border-radius: 7.5px; color: white!important;} ";
+		
+		//text-quote es cuando se cita un mensaje
+		css.innerHTML += ".text-quote * { color: gray;} ";
 		
 		css.innerHTML += ".pane-header.pane-list-header { background-color: rgba(0, 0, 0, 1);} ";
 		css.innerHTML += ".chatlist-panel-search { background-color: rgba(0, 0, 0, 1);} ";
 		
-		
 		css.innerHTML += ".app-wrapper { background-color: rgba(0, 0, 0, 0.7);} ";
-		css.innerHTML += ".bubble-image  { background-color: rgba(0, 0, 0, 0.7);} ";
+		css.innerHTML += ".bubble-image  { background-color: rgba(0, 0, 0, 0.7); color: gray!important;} ";
+		css.innerHTML += ".bubble-image-caption-text  { color: white!important;} ";
 		
 		//css.innerHTML += ".two  {width: 10% !important;} "; //.k1feT
 		
