@@ -32,13 +32,18 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 		
 		//css.innerHTML += ".pane-body { background-image:url('http://listas.eleconomista.es/system/items/000/074/589/medium/E95.jpg?1464076950') !important; }";
 		
-		console.log(imgBack);
+		//console.log(imgBack);
 		
 		if (imgBack) {
-			console.log("ok");
+			
 			css.innerHTML = css.innerHTML + ".pane-body { background-image:url('" + imgBack + "') !important; }";
 		}
 		
+		/*
+		color
+		background-color
+		border-radius
+		*/
 		
 		//css.innerHTML += ".chat-status { color: gray;} ";
 		css.innerHTML += ".chat-avatar { background-color: rgba(0, 0, 0, 1);} ";
@@ -49,20 +54,30 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 		css.innerHTML += ".ellipsify { color: white;} "; 
 		css.innerHTML += ".chat-status{ color: yellow;} "; 
 		css.innerHTML += ".chat-body *{ color: gray!important;} ";
-		css.innerHTML += ".chatlist-panel-search *{ background-color: rgba(0, 0, 0, 1); background-color: black!important; color: gray!important;} ";
+		//css.innerHTML += ".chatlist-panel-search *{ background-color: rgba(0, 0, 0, 1); color: gray!important;} ";
 		
-		//media-content
-		//.media-content .media
 		
 		//Mensajes
 		css.innerHTML += ".bubble, .text-quote { background-color: rgba(0, 0, 0, 1); border-radius: 7.5px; color: white!important;} ";
+		
+		//Hora del mensaje
+		css.innerHTML += ".bubble-text-meta * { color: gray!important;} ";
+		
+		
+		//message message-chat message-in tail message-chat
+		//css.innerHTML += ".message-chat.hover *  { background-color: black!important;} ";
+		
+		
+		
+		//Cuando el mensaje tiene negritas
+		css.innerHTML += ".message strong { color: white!important;} ";
 		
 		//text-quote es cuando se cita un mensaje
 		css.innerHTML += ".text-quote * { color: gray;} ";
 		
 		//Buscador
 		css.innerHTML += ".pane-header.pane-list-header { background-color: rgba(0, 0, 0, 1);} ";
-		css.innerHTML += ".chatlist-panel-search { background-color: rgba(0, 0, 0, 1);} ";
+		css.innerHTML += ".chatlist-panel-search * { background-color: black!important; color: gray!important;} "; //rgba(0, 0, 0, 1)
 		
 		//Imagen del chat
 		css.innerHTML += ".app-wrapper { background-color: rgba(0, 0, 0, 0.7);} ";

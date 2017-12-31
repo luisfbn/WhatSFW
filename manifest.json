@@ -1,9 +1,9 @@
 {
     "manifest_version": 2,
     
-    "name": "Whatsapp SFW",
-    "description": "Extensión de Chrome para hacer el Whatsapp Web más seguro para el trabajo.",
-    "version": "1.0",
+    "name": "Whatsfw",
+    "description": "Extensión de Chrome para editar el diseño de Whatsapp Web como estilo de colores, fondo, opacar las imágenes, entre otras cosas, para lograr tener otras alternativas de diseño, ser más prudente al ver imágenes cuando se encuentra en espacios abiertos o bien en el trabajo (aka Safe For Work). Puedes editar en Opciones estos parámetros.",
+    "version": "1.1",
 
 	"page_action": {
 		"default_icon":  { "16": "icon16.png",
