@@ -5,9 +5,13 @@
     <title>WhatsApp SFW</title>
 	
 	<!-- Bootstrap core CSS -->
-    <link href="https://getbootstrap.com/docs/3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-	<!--link href="bootstrap.min.css" rel="stylesheet"-->
+    <!--link href="https://getbootstrap.com/docs/3.3/dist/css/bootstrap.min.css" rel="stylesheet"-->
+	<link href="bootstrap-3.3.min.css" rel="stylesheet">
 	
+	<script src="jquery-1.12.4.min.js"></script>
+	<script src="bootstrap-3.3.min.js"></script>
+	<script src="options.js"></script>
+
 </head>
 
 <body>
@@ -27,134 +31,54 @@
 	<br><br>
 	  
 	  
-		<div class="form-group">	
-		
-		  <div class="form-group row">
-			<label class="col-sm-3 col-form-label">Imagen de Fondo de Chat</label>
-			<div class="col-sm-9">
-			  <input class="form-control" type="url" value="https://getbootstrap.com" id="txtURL">
-			</div>
-		  </div>
+	  <div > 
+	  
+	  <form class="form-horizontal"> 
+			<div class="form-group"> 
 		  
-		  
-		  <div class="form-group row">
-		  
-			<label class="col-sm-3 col-form-label">Color</label>
+				<label class="col-sm-2 control-label">Imagen de Fondo</label> 
+				<div class="col-sm-10"> 
+					<input class="form-control" id="txtImgBack" placeholder="URL de Imagen de Fondo" > 
+				</div> 
 			
-			<div class="col-sm-2">
-			  <input class="form-control" style="height:40px;" type="color" value="#000000" id="txtColor">
-			</div>
-			</div>
+			</div> 
 			
-		<div class="form-group row">	
-			<div class="col-sm-2">
-			  <input oninput="changeRed(this.value)" onchange="changeRed(this.value)" type="range" id="slideRed" name="slideRed" min="0" max="100">
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+				  <div class="checkbox">
+					<label>
+					  <input id="chkFondoOscuro" type="checkbox"> Sin imagen de fondo, color oscuro.
+					</label>
+				  </div>
+				</div>
 			</div>
 			
-			<div class="col-sm-2">
-				<input class="form-control text-center" disabled type="number" value="100" id="txtURL">
-			</div>
+			<div class="form-group"> 
 			
-		  </div>
-		  
-		  
-		  
+				<div class="col-sm-offset-2 col-sm-10"> 
+			
+					<button id="btnGuardar" type="button" class="btn btn-primary">Guardar</button> 
+					<button id="btnReiniciar" type="button" class="btn">Cancelar</button>
+				</div>
+			</div>
 
-		</div>
-	  
-	<br><br>
-	  
-	  
-<div class="row">	
-	  
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
-  </tbody>
-</table>
-	  
-	 </div>
-	  
-	<br><br>
-	   
-	  
-	  
-    <div class="row">	
-		<div class="col-12 col-md-9 pull-md-3 bd-content">
-	
+		 		
 		
+		</form> 
 		
-		<div class="form-group row">
-			<div class="col-2">
-			<label class="col-2">Imagen de Fondo de Chat</label>
-		  </div>
-		  <div class="col-8">
-			<input class="form-control" type="url" value="https://getbootstrap.com" id="txtURL">
-		  
-		</div>
-		
-		
-		<div class="col-2">
-			<label class="col-2">Color</label>
-		  </div>
-		  
-		  <div class="col-3" >
-			<input class="form-control" style="height:40px;" type="color" value="#563d7c" id="txtColor">
-		  </div>
-		
-
-		
-		<input class="btn btn-primary" type="submit" id="save" value="Guardar">
-		
-		<button type="button" class="btn btn-outline-warning">Resetear!</button>
-		
-		
-
-		</div>
 	</div>
+	  
+	
   
   
 	
   
-</div>
 </div>
 
 </body>
 
 
-<!-- Bootstrap core JavaScript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-<script src="https://getbootstrap.com/docs/3.3/dist/js/bootstrap.min.js"></script>
 
-	
 	
 	
 </html>

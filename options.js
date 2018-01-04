@@ -1,52 +1,38 @@
 $(function () {
 	
-	
     chrome.storage.sync.get('imgBack', function (items) {
-        
-		$('#txtImgBack').val(items.imgBack);
-		
+    
 		if (items.imgBack != '')
 		{
-			var mat = items.matriculas.split(',');
-			$("#txtImgBack").val(mat.length);
+			$("#txtImgBack").val(items.imgBack);
 		}
+		
+    });
+	
+	chrome.storage.sync.get('chkFondoOscuro', function (items) {
+    	
+		$('#chkFondoOscuro')[0].checked = items.chkFondoOscuro;
+		
     });
 	
 	
 
-    $('#save').click(function () {
+    $('#btnGuardar').click(function () {
         
 		var imgBack = $('#txtImgBack').val();
+		var chkFondoOscuro = $('#chkFondoOscuro')[0].checked;
 		
-        if (imgBack) {
-            chrome.storage.sync.set({ 'imgBack': imgBack });
-        }
-		
+        chrome.storage.sync.set({'imgBack': imgBack });
+        chrome.storage.sync.set({'chkFondoOscuro': chkFondoOscuro });
+        
 		close();
 		
     });
 
-    $('#reset').click(function () {
+	
+    $('#btnReiniciar').click(function () {
 		
-		
-		// http://listas.eleconomista.es/system/items/000/074/589/medium/E95.jpg?1464076950
-		
-		
-		chrome.storage.sync.set({ 'matriculas': '' }, function () {
-            
-			var opt = {
-                type: "basic",
-                title: "Reset!",
-                message: "Valores reseteados",
-                iconUrl: "icon.png"
-            }
-			
-			$('#txtImgBack').val("");
-			
-            chrome.notifications.create('reset', opt, function () { });
-			
-        });
-		
-		chrome.storage.sync.set({ 'matriculasOK': '' });
+		close();
+
     });
 });

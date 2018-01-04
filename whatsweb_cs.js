@@ -1,6 +1,7 @@
 
 
 var imgBack;
+var chkFondoOscuro;
 
 
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
@@ -28,15 +29,15 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 		css.innerHTML += ".image-thumb {opacity: 0.05; transition: visibility 0s, opacity 0.5s linear;} ";
 		css.innerHTML += ".image-thumb:hover {opacity: 1;} ";
 		
-		//css.innerHTML += ".pane-body * {background-color: black!important; color: gray!important;} ";
-		
-		//css.innerHTML += ".pane-body { background-image:url('http://listas.eleconomista.es/system/items/000/074/589/medium/E95.jpg?1464076950') !important; }";
-		
-		//console.log(imgBack);
 		
 		if (imgBack) {
-			
-			css.innerHTML = css.innerHTML + ".pane-body { background-image:url('" + imgBack + "') !important; }";
+			if (!chkFondoOscuro) {
+				css.innerHTML = css.innerHTML + ".pane-body { background-image:url('" + imgBack + "') !important; }";
+			}
+			else
+			{
+				css.innerHTML += ".pane-body * {background-color: black!important; color: gray!important;} ";
+			}
 		}
 		
 		/*
@@ -119,6 +120,9 @@ chrome.storage.sync.get('imgBack', function (items) {
 	imgBack = items.imgBack;
 });
 
+chrome.storage.sync.get('chkFondoOscuro', function (items) {
+	chkFondoOscuro = items.chkFondoOscuro;
+});
 
 chrome.runtime.sendMessage({ action: "show" });
 
