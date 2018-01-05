@@ -2,14 +2,15 @@
     "manifest_version": 2,
     
     "name": "Whatsfw",
-    "description": "Extensión de Chrome para editar el diseño de Whatsapp Web como estilo de colores, fondo, opacar las imágenes, entre otras cosas, para lograr tener otras alternativas de diseño, ser más prudente al ver imágenes cuando se encuentra en espacios abiertos o bien en el trabajo (aka Safe For Work). Puedes editar en Opciones estos parámetros.",
+    "description": "Edita el diseño de WhatsappWeb opacando las imágenes para tener discreción al visualizarlas (Safe For Work).",
     "version": "1.1",
 
 	"page_action": {
 		"default_icon":  { "16": "icon16.png",
 								  "24": "icon24.png",
 								  "32": "icon32.png",
-							      "48": "icon48.png"},
+							      "48": "icon48.png",
+								  "128": "icon128.png"},
 		"default_title":"Whatsapp SFW",
 		"default_popup":"popup.html"
 	},
@@ -25,14 +26,13 @@
 		{
 			"matches": ["https://web.whatsapp.com/*"],
 			"js":["whatsweb_cs.js",   "jquery-1.12.4.min.js", "bootstrap-3.3.min.js"],
-			"css":["whatsweb_cs.css", "bootstrap-3.3.min.css"]
+			"css":["bootstrap-3.3.min.css"]
 		}
 	],
 	
     "permissions" : [
 		"tabs",
         "storage", 
-        "notifications",
 		"https://web.whatsapp.com/*"
     ]
 }
