@@ -25,7 +25,7 @@
 	"content_scripts":[
 		{
 			"matches": ["https://web.whatsapp.com/*"],
-			"js":["whatsweb_cs.js",   "jquery-1.12.4.min.js", "bootstrap-3.3.min.js"],
+			"js":["whatsweb_cs.js", "jquery-1.12.4.min.js", "bootstrap-3.3.min.js"],
 			"css":["bootstrap-3.3.min.css"]
 		}
 	],
