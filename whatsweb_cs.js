@@ -45,17 +45,22 @@ function AplicarEstilosSFW() {
 	var estilos = 
 	{
 		lista: [
+				
 				{
-					objects : ".large-emoji, .emoji, .avatar * img",
-					styles  : "opacity: 1!important;"
+					objects : "#main img,#main video,#main .video-thumb",
+					styles  : "-webkit-filter: blur(30px); filter: blur(30px);"
 				},
 				{
-					objects : ".media-viewer-thumbs, .message-video, .message-image, .message-gif, .media-viewer * img, .media-viewer * video",
-					styles  : "opacity: 0.08!important; transition: visibility 0s, opacity 0.1s linear;"
+					objects : "#main img:hover,#main video:hover,#main .selectable-text",
+					styles  : "-webkit-filter: blur(0px); filter: blur(0px);"
 				},
 				{
-					objects : ".media-viewer-thumbs:hover, .message-video:hover, .message-image:hover, .message-gif:hover, .media-viewer * img:hover, .media-viewer * video:hover",
-					styles  : "opacity: 1!important; transition: visibility 0s, opacity 1.5s linear;"
+					objects : "#main, #pane-side",
+					styles  : "-webkit-filter: blur(30px); filter: blur(5px);"
+				},
+				{
+					objects : "#main:hover, #pane-side:hover",
+					styles  : "-webkit-filter: blur(0px); filter: blur(0px);"
 				}
 			],
 		getInfo: function (i) {
