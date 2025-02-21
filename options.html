@@ -1,96 +1,64 @@
 <!doctype html>
-<html>
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>WhatsApp SFW</title>
-	
-	<!-- Bootstrap core CSS -->
-	<link href="bootstrap-3.3.min.css" rel="stylesheet">
-	
-	<script src="jquery-1.12.4.min.js"></script>
-	<script src="bootstrap-3.3.min.js"></script>
-	<script src="options.js"></script>
+    <title>WhatsApp SFW - Configuración</title>
 
-	
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap-3.3.min.css" rel="stylesheet">
+
+    <script src="jquery-1.12.4.min.js"></script>
+    <script src="bootstrap-3.3.min.js"></script>
+    <script src="options.js" defer></script> <!-- Agregado `defer` para cargar después -->
+
 </head>
-
 <body>
 
 <div class="container">
-	
-	<div class="row">	
-		<div class="starter-template hide">
-		
-			<h1>Configuración de Estilos</h1>
-			<h2>WhatsApp Web</h2>
-		
-        
-		</div>
-	</div>
-	  
-	<br><br>
-	  
-	  
-	  
-	  <div > 
-	  
-	  <form class="form-horizontal hide"> 
-			<div class="form-group"> 
-		  
-				<label class="col-sm-2 control-label">Imagen de Fondo</label> 
-				<div class="col-sm-10"> 
-					<input class="form-control" id="txtImgBack" placeholder="URL de Imagen de Fondo" > 
-				</div> 
-			
-			</div> 
-			
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-				  <div class="checkbox">
-					<label>
-					  <input id="chkFondoOscuro" type="checkbox"> Sin imagen de fondo, color oscuro.
-					</label>
-				  </div>
-				</div>
-			</div>
-			
-			<div class="form-group"> 
-		  
-				<label class="col-sm-2 control-label">opacidad</label> 
-				<div class="col-sm-10"> 
-					<input type="range" name="points" id="points" value="50" min="0" max="100">
-					<input type="range" min="1" max="100" value="100" class="slider" id="myRange">
-				</div> 
-			
-			</div> 
-			
-			
-			<div class="form-group"> 
-			
-				<div class="col-sm-offset-2 col-sm-10"> 
-			
-					<button id="btnGuardar" type="button" class="btn btn-primary">Guardar</button> 
-					<button id="btnReiniciar" type="button" class="btn">Cancelar</button>
-				</div>
-			</div>
+    <div class="row">    
+        <div class="starter-template">
+            <h1>Configuración de Estilos</h1>
+            <h2>WhatsApp Web</h2>
+        </div>
+    </div>
+    
+    <br><br>
 
-		 		
-		
-		</form> 
-		
-	</div>
-	  
-	
-  
-  
-	
-  
+    <div> 
+        <form class="form-horizontal"> 
+            <div class="form-group"> 
+                <label class="col-sm-2 control-label">Imagen de Fondo</label> 
+                <div class="col-sm-10"> 
+                    <input class="form-control" id="txtImgBack" placeholder="URL de Imagen de Fondo"> 
+                </div> 
+            </div> 
+            
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <div class="checkbox">
+                        <label>
+                            <input id="chkFondoOscuro" type="checkbox"> Sin imagen de fondo, color oscuro.
+                        </label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group"> 
+                <label class="col-sm-2 control-label">Opacidad</label> 
+                <div class="col-sm-10"> 
+                    <input type="range" min="0" max="100" value="50" class="slider" id="opacityRange">
+                </div> 
+            </div> 
+            
+            <div class="form-group"> 
+                <div class="col-sm-offset-2 col-sm-10"> 
+                    <button id="btnGuardar" type="button" class="btn btn-primary">Guardar</button> 
+                    <button id="btnReiniciar" type="button" class="btn btn-secondary">Cancelar</button>
+                </div>
+            </div>
+        </form> 
+    </div>
 </div>
 
 </body>
-
-
-
-	
-	
 </html>

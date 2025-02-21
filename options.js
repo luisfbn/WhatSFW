@@ -1,38 +1,29 @@
 $(function () {
-	
-    chrome.storage.sync.get('imgBack', function (items) {
-    
-		if (items.imgBack != '')
-		{
-			$("#txtImgBack").val(items.imgBack);
-		}
-		
-    });
-	
-	chrome.storage.sync.get('chkFondoOscuro', function (items) {
-    	
-		$('#chkFondoOscuro')[0].checked = items.chkFondoOscuro;
-		
-    });
-	
-	
-
-    $('#btnGuardar').click(function () {
-        
-		var imgBack = $('#txtImgBack').val();
-		var chkFondoOscuro = $('#chkFondoOscuro')[0].checked;
-		
-        chrome.storage.sync.set({'imgBack': imgBack });
-        chrome.storage.sync.set({'chkFondoOscuro': chkFondoOscuro });
-        
-		close();
-		
+    // Cargar valores almacenados
+    chrome.storage.sync.get(["imgBack", "chkFondoOscuro"], function (items) {
+        $("#txtImgBack").val(items.imgBack || ""); // Evita undefined
+        $("#chkFondoOscuro").prop("checked", items.chkFondoOscuro || false);
     });
 
-	
-    $('#btnReiniciar').click(function () {
-		
-		close();
+    // Guardar configuración
+    $("#btnGuardar").click(function () {
+        let imgBack = $("#txtImgBack").val();
+        let chkFondoOscuro = $("#chkFondoOscuro").prop("checked");
 
+        chrome.storage.sync.set({
+            imgBack: imgBack,
+            chkFondoOscuro: chkFondoOscuro
+        }, function () {
+            alert("Configuración guardada.");
+        });
+    });
+
+    // Restablecer valores
+    $("#btnReiniciar").click(function () {
+        chrome.storage.sync.clear(function () {
+            $("#txtImgBack").val("");
+            $("#chkFondoOscuro").prop("checked", false);
+            alert("Configuración reiniciada.");
+        });
     });
 });
